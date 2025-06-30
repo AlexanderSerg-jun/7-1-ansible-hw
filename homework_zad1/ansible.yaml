@@ -1,1 +1,10 @@
 ---
+name: my_server
+hosts: my_server
+become: yes
+tasks:
+  - name: Download archive
+    unarchive:
+    src: https://dlcdn.apache.org/kafka/3.9.1/kafka_2.12-3.9.1.tgz
+    dst: /usr/bin/
+    remote_src: yes
